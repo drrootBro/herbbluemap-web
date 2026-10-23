@@ -6,10 +6,13 @@
 
 - [Body Relief — Tung Point Finder](https://herbbluemap.com/body-relief/): A symptom-first interactive atlas of Master Tung acupuncture points for pain. Pick where it hurts (head pain, neck pain, low back pain, sciatica); the map shows the points practitioners use, drawn on body templates, with the classical reasoning for each. Its premise: "Pain doesn't always start where it hurts."
 
+## Herb Library
+
+- [Shennong Bencao Jing Essentials — the Classical 32](https://herbbluemap.com/bencao/): The 32 core herbs of the classical Chinese formulary (the herbs Zhang Zhongjing's formulas run on), distilled from the Shennong Bencao Jing (Divine Farmer's Classic of Materia Medica, ~2,000 years old). One page per herb with a classical plate illustration, the original Chinese text with English translation, flavor/nature/channel entry, a systems-biology reading of its pharmacology, and its classical formula pairings. Herbs: Guizhi (cinnamon twig), Mahuang (ephedra), Fuzi (aconite), Banxia (pinellia), Gegen (kudzu root), Shaoyao (peony root), Gancao (licorice root), Zhigancao (honey-fried licorice), Dazao (jujube), Shengjiang (fresh ginger), Shigao (gypsum), Xingren (apricot kernel), Fuling (poria), Dahuang (rhubarb root), Mangxiao (mirabilite), Xixin (asarum), Huangqin (scutellaria root), Huanglian (coptis root), Zexie (water plantain), Zhuling (polyporus), Zhizi (gardenia fruit), Zhimu (anemarrhena root), Huangqi (astragalus root), Baizhu (atractylodes root), Renshen (ginseng root), Zhishi (immature bitter orange), Houpo (magnolia bark), Wuweizi (schisandra berry), Chaihu (bupleurum root), Danggui (angelica root), Ejiao (donkey-hide gelatin), Chuanxiong (Sichuan lovage rhizome). Each herb page lives at https://herbbluemap.com/bencao/{pinyin}.html — e.g. https://herbbluemap.com/bencao/gancao.html for licorice root. A Chinese edition of the same library is at tcmus.net/tcm/bencao/.
+
 ## Coming library (in preparation)
 
 - Adaptogens, the Chinese originals: ginseng, astragalus, reishi, schisandra and other adaptogens are classical Chinese herbs; how the Chinese system classifies and combines them.
-- Single-herb maps: one page per herb — traditional uses, pattern fit, cautions.
 - Dampness in Chinese medicine: the heavy, foggy, sluggish pattern and its signs.
 - The Chinese medicine body clock: the two-hour organ rhythm and waking at 3 a.m.
 - Tongue reading basics and a beginners' roadmap to Chinese herbal medicine.
