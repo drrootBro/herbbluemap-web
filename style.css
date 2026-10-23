@@ -46,3 +46,30 @@ main{max-width:880px;margin:0 auto;padding:0 1.1rem 3rem}
   .lib-grid{grid-template-columns:1fr}
   .site-nav a{margin-left:.7rem;font-size:.9rem}
 }
+
+/* --- articles (2026-10-23 seed guides) --- */
+.article{padding-top:1.6rem}
+.article h1{font-size:2.1rem;line-height:1.22;margin:.4rem 0 .8rem}
+.article h2{font-size:1.42rem;margin:2rem 0 .55rem}
+.article p{max-width:44rem}
+.crumbs{color:#5a6a80;font-size:.9rem}
+.crumbs a{color:#5a6a80}
+.pull{margin:1.7rem 0;padding:.4rem 0 .4rem 1.1rem;border-left:3px solid var(--blue);font-size:1.18rem;font-style:italic;color:var(--blue-deep);max-width:40rem}
+.chart{border-collapse:collapse;width:100%;margin:1.1rem 0;font-size:.97rem;background:#fff}
+.chart th,.chart td{border:1px solid var(--line);padding:.5rem .65rem;text-align:left;vertical-align:top}
+.chart th{background:var(--soft)}
+.chart .t-time{white-space:nowrap;font-weight:700}
+.chart .han,.stage-list .han{color:#5a6a80}
+.stage-list{max-width:44rem;padding-left:1.2rem}
+.stage-list li{margin:.45rem 0}
+.doctor-note{background:#fdf6e0;border:1px solid #e8d48a;border-radius:10px;padding:.9rem 1.1rem;font-size:.95rem;max-width:44rem;margin:1.6rem 0}
+.faq{margin-top:2.2rem}
+.faq-item{max-width:44rem;margin-bottom:1.1rem}
+.faq-item h3{font-size:1.05rem;margin:0 0 .3rem}
+.faq-item p{margin:0}
+.seealso{margin-top:2.2rem}
+.seealso a{display:block;text-decoration:none;color:inherit}
+.tool-embed{margin:1.4rem 0}
+.tool-embed iframe{width:100%;height:760px;border:1px solid var(--line);border-radius:12px;background:#fff}
+.tool-embed-note{color:#5a6a80;font-size:.92rem}
+@media (max-width:640px){.article h1{font-size:1.65rem}.tool-embed iframe{height:640px}}
