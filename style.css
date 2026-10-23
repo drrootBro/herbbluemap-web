@@ -29,6 +29,10 @@ main{max-width:880px;margin:0 auto;padding:0 1.1rem 3rem}
 .system{margin:.5rem 0 2.5rem}
 .system p{max-width:44rem}
 .system .sys-link{margin-top:1.1rem}
+.system-fig{margin:1.6rem 0 .4rem;background:#fff;border:1px solid var(--line);border-radius:12px;padding:1rem 1rem .7rem}
+.system-fig svg{width:100%;height:auto;display:block}
+.system-fig svg text{font-family:Georgia,'Times New Roman',serif}
+.system-fig figcaption{color:#44536a;font-size:.95rem;margin-top:.55rem;text-align:center}
 .lib-grid{list-style:none;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:1rem}
 .lib-grid li{background:#fff;border:1px solid var(--line);border-radius:10px;padding:1rem 1.1rem}
 .lib-grid strong{display:block;margin-bottom:.3rem}
