@@ -116,8 +116,8 @@ button.ghost{background:#fff;color:var(--blue);border:1px solid var(--blue)}
 <script>
 const AREA={},STATES={};let coverage=[],lastQuery=null,curPage=1,curTotal=0;
 const SYMPTOMS=[["头痛","Headaches"],["失眠","Insomnia"],["焦虑","Anxiety"],["颈肩痛","Neck & shoulder pain"],["腰背痛","Back pain"],["坐骨神经痛","Sciatica"],["消化不良","Digestive issues"],["妇科/不孕","Fertility & women’s health"],["过敏","Allergies"],["面瘫","Facial paralysis (Bell’s palsy)"],["减肥","Weight management"],["运动损伤","Sports injuries"],["美容","Cosmetic acupuncture"],["男性健康","Men’s health"],["肿瘤支持","Cancer support"],["孕产","Pregnancy & postpartum"]];
-const CAT_EN={"头痛":"Headaches","偏头痛":"Migraines","失眠":"Insomnia","焦虑":"Anxiety","颈肩痛":"Neck & shoulder pain","腰背痛":"Back pain","坐骨神经痛":"Sciatica","消化不良":"Digestive issues","妇科":"Women’s health","不孕":"Fertility","过敏":"Allergies","面瘫":"Facial paralysis","减肥":"Weight management","运动损伤":"Sports injuries","美容":"Cosmetic acupuncture","男性健康":"Men’s health","肿瘤支持":"Cancer support","孕产":"Pregnancy & postpartum"};
-function catEn(c){for(const k in CAT_EN){if(c.includes(k))return CAT_EN[k]}return c}
+const CAT_EN={"儿科":"Pediatrics","减肥":"Weight management","压力":"Stress","坐骨神经痛":"Sciatica","失眠":"Insomnia","头痛":"Headaches","偏头痛":"Migraines","妇科":"Women’s health","不孕":"Fertility","妇科/不孕":"Fertility & women’s health","孕产":"Pregnancy & postpartum","心理健康":"Mental health","慢性病":"Chronic conditions","消化不良":"Digestive issues","焦虑":"Anxiety","男性健康":"Men’s health","疼痛":"Pain management","美容":"Cosmetic acupuncture","肿瘤支持":"Cancer support","腰背痛":"Back pain","自身免疫":"Autoimmune support","过敏":"Allergies","运动损伤":"Sports injuries","面瘫":"Facial paralysis (Bell’s palsy)","颈肩痛":"Neck & shoulder pain"};
+function catEn(c){if(CAT_EN[c])return CAT_EN[c];for(const k in CAT_EN){if(c.includes(k))return CAT_EN[k]}return c}return c}
 const $=id=>document.getElementById(id);
 function go(v){["home","results","profile"].forEach(x=>$("v-"+x).classList.toggle("hidden",x!==v));window.scrollTo(0,0)}
 function years(s){if(!s)return"—";return Math.max(0,Math.floor((Date.now()-new Date(s))/3.156e10))}
