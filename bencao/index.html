@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shennong Bencao Jing Essentials — 32 Classical Herbs | HerbBlueMap</title>
+<meta name="description" content="The Shennong Bencao Jing (Divine Farmer's Classic of Materia Medica) distilled: 32 core herbs of the classical Chinese formulary — original text with English translation, properties, systems-biology notes and classical pairings.">
+<link rel="canonical" href="https://herbbluemap.com/bencao/">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#1a1612;--ink-soft:#4a453f;--ink-muted:#8a857d;
+  --paper:#faf8f4;--paper-warm:#f0ebe0;--paper-card:#fffdf9;
+  --brush:#8b3a2a;--brush-light:rgba(139,58,42,0.08);
+  --gold:#b8942a;--gold-light:rgba(184,148,42,0.10);
+  --teal:#2a6b5e;--teal-light:rgba(42,107,94,0.08);
+  --border:rgba(26,22,18,0.10);--border-warm:rgba(139,58,42,0.15);
+}
+body{font-family:'Georgia',serif;background:var(--paper);color:var(--ink);overflow-x:hidden;min-height:100vh}
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 60% 40% at 10% 20%,rgba(139,58,42,0.03) 0%,transparent 60%),radial-gradient(ellipse 40% 60% at 90% 80%,rgba(42,107,94,0.03) 0%,transparent 60%);pointer-events:none;z-index:0}
+.page-rule{position:fixed;left:48px;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,transparent,var(--border-warm) 20%,var(--border-warm) 80%,transparent);z-index:0}
+.wrap{position:relative;z-index:1;max-width:960px;margin:0 auto;padding:64px 40px 80px 80px;animation:fadeUp .5s ease both}
+
+.topbar{display:flex;align-items:center;gap:16px;margin-bottom:56px}
+.back{font-family:monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-muted);text-decoration:none;display:flex;align-items:center;gap:8px;transition:color .2s}
+.back::before{content:'';display:inline-block;width:16px;height:1px;background:var(--ink-muted);transition:all .2s}
+.back:hover{color:var(--teal)}.back:hover::before{background:var(--teal);width:24px}
+.topbar-rule{flex:1;height:1px;background:var(--border)}
+.topbar-brand{font-family:monospace;font-size:11px;letter-spacing:.2em;color:var(--teal)}
+
+.hero{margin-bottom:40px}
+.hero-label{font-family:monospace;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--brush);display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.hero-label::before{content:'';display:inline-block;width:20px;height:1px;background:var(--brush)}
+.hero-title{font-size:40px;font-weight:400;line-height:1.1;letter-spacing:-.01em;color:var(--ink);margin-bottom:10px}
+.hero-sub{font-size:14px;color:var(--ink-muted);letter-spacing:.08em}
+
+.progress-section{margin-bottom:36px}
+.progress-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
+.progress-label{font-family:monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-muted)}
+.progress-count{font-family:monospace;font-size:10px;color:var(--teal)}
+.progress-track{height:2px;background:var(--border);border-radius:1px;overflow:hidden}
+.progress-fill{height:100%;background:var(--teal);border-radius:1px;width:100%}
+
+.search-wrap{margin-bottom:28px;position:relative}
+.search-input{width:100%;font-family:'Georgia',serif;font-size:14px;color:var(--ink);background:var(--paper-card);border:1px solid var(--border);padding:12px 16px 12px 44px;border-radius:2px;outline:none;transition:border-color .18s}
+.search-input:focus{border-color:var(--brush)}
+.search-input::placeholder{color:var(--ink-muted)}
+.search-icon{position:absolute;left:16px;top:50%;transform:translateY(-50%);width:14px;height:14px;opacity:.4;pointer-events:none}
+
+.cats{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
+.cat{font-family:monospace;font-size:10px;letter-spacing:.15em;text-transform:uppercase;padding:5px 12px;border:1px solid var(--border);border-radius:1px;cursor:pointer;background:transparent;color:var(--ink-muted);transition:all .15s}
+.cat:hover{border-color:var(--brush);color:var(--brush);background:var(--brush-light)}
+.cat.active{border-color:var(--teal);color:var(--teal);background:var(--teal-light)}
+
+.herb-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--border);border:1px solid var(--border)}
+.herb-card{background:var(--paper-card);padding:22px 18px;text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:5px;transition:background .2s;position:relative;overflow:hidden}
+.herb-card::after{content:'';position:absolute;bottom:0;left:18px;right:18px;height:2px;background:var(--teal);transform:scaleX(0);transform-origin:left;transition:transform .28s}
+.herb-card:hover{background:var(--paper-warm)}
+.herb-card:hover::after{transform:scaleX(1)}
+.herb-card.hidden{display:none}
+
+.herb-num{font-family:monospace;font-size:9px;letter-spacing:.15em;color:var(--border);margin-bottom:2px}
+.herb-pinyin{font-family:monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--teal)}
+.herb-cn{font-size:22px;font-weight:400;line-height:1.1;color:var(--ink)}
+.herb-en{font-size:11px;color:var(--ink-muted);letter-spacing:.05em}
+.herb-tags{margin-top:5px;display:flex;flex-wrap:wrap;gap:4px}
+.herb-tag{font-family:monospace;font-size:9px;letter-spacing:.08em;padding:2px 6px;border:1px solid var(--border);border-radius:1px;color:var(--ink-muted)}
+
+.no-results{grid-column:1/-1;padding:48px;text-align:center;font-family:monospace;font-size:12px;letter-spacing:.15em;color:var(--ink-muted);display:none}
+.no-results.show{display:block}
+
+footer{margin-top:48px;display:flex;align-items:center;justify-content:space-between;padding-top:28px;border-top:1px solid var(--border)}
+.footer-text{font-family:monospace;font-size:10px;letter-spacing:.15em;color:var(--ink-muted)}
+.footer-glyph{font-size:26px;color:var(--border-warm)}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:700px){
+  .page-rule{display:none}.wrap{padding:40px 20px}
+  .herb-grid{grid-template-columns:repeat(2,1fr)}
+  .hero-title{font-size:28px}
+}
+@media(max-width:400px){.herb-grid{grid-template-columns:1fr}}
+.tcmus-nav{position:relative;z-index:2;max-width:900px;margin:0 auto;padding:14px 40px 0 80px;font-family:'Georgia','Songti SC','STSong','SimSun',serif;font-size:15px;letter-spacing:normal;color:var(--ink-muted);display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.tcmus-nav a{color:var(--ink-soft);text-decoration:none}
+.tcmus-nav a:hover{color:var(--brush)}
+.tn-sep{color:var(--border-warm)}
+@media(max-width:680px){.tcmus-nav{padding:12px 20px 0}}
+</style>
+<style>.tcmus-nav-bottom{justify-content:center;text-align:center;padding:30px 20px 0 !important;margin:26px auto 0;max-width:900px;border-top:1px solid var(--border-warm)}</style>
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="HerbBlueMap">
+<meta property="og:title" content="Shennong Bencao Jing Essentials — 32 Classical Herbs | HerbBlueMap">
+<meta property="og:description" content="The Shennong Bencao Jing (Divine Farmer's Classic of Materia Medica) distilled: 32 core herbs of the classical Chinese formulary — original text with English translation, properties, systems-biology notes and classical pairings.">
+<meta property="og:url" content="https://herbbluemap.com/bencao/">
+<meta property="og:image" content="https://herbbluemap.com/bencao/images/guizhi.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "CollectionPage", "headline": "Shennong Bencao Jing Essentials — 32 Classical Herbs", "description": "The Shennong Bencao Jing (Divine Farmer's Classic of Materia Medica) distilled: 32 core herbs of the classical Chinese formulary — original text with English translation, properties, systems-biology notes and classical pairings.", "url": "https://herbbluemap.com/bencao/", "image": "https://herbbluemap.com/bencao/images/guizhi.jpg", "inLanguage": "en", "author": {"@type": "Organization", "name": "HerbBlueMap", "url": "https://herbbluemap.com/"}, "publisher": {"@type": "Organization", "name": "HerbBlueMap", "url": "https://herbbluemap.com/"}}
+</script>
+<style>
+.hbm-hdr{position:sticky;top:0;z-index:60;background:rgba(250,248,244,.97);border-bottom:1px solid rgba(30,80,162,.20);box-shadow:0 1px 0 rgba(30,80,162,.08);font-family:'Georgia',serif}
+.hbm-hdr-in{max-width:900px;margin:0 auto;padding:12px 40px 0 80px}
+.hbm-hdr-brand{padding:6px 0 8px}
+.hbm-hdr-brand a{display:inline-flex;align-items:center;gap:10px;text-decoration:none;border-bottom:none}
+.hbm-hdr-brand img{height:30px;width:30px;display:block}
+.hbm-hdr-brand .bn{font-size:22px;font-weight:700;color:#1c2430;letter-spacing:.01em}
+.hbm-hdr-brand .bn em{font-style:normal;color:#1e50a2}
+.hbm-hdr nav{display:flex;gap:2px;overflow-x:auto;padding-bottom:12px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.hbm-hdr nav::-webkit-scrollbar{display:none}
+.hbm-hdr nav a{white-space:nowrap;padding:8px 12px;font-size:15px;color:#4a453f;text-decoration:none;position:relative;border-bottom:none}
+.hbm-hdr nav a:hover{color:#1e50a2}
+.hbm-hdr nav a.on{color:#1e50a2}
+.hbm-hdr nav a.on::after{content:'';position:absolute;left:12px;right:12px;bottom:2px;height:2px;background:#1e50a2}
+@media(max-width:660px){.hbm-hdr-in{padding:10px 20px 0}.hbm-hdr nav a{padding:8px 10px;font-size:14px}}
+</style>
+</head>
+<body>
+<header class="hbm-hdr"><div class="hbm-hdr-in">
+<div class="hbm-hdr-brand"><a href="/"><img src="/favicon.svg" alt=""><span class="bn">Herb<em>Blue</em>Map</span></a></div>
+<nav><a href="/">Home</a><a href="/body-relief/">Pain Point Finder</a><a href="/bencao/" class="on">Herb Library</a><a href="/#about">About</a></nav>
+</div></header>
+<div class="page-rule"></div>
+<div class="wrap">
+
+<div class="topbar">
+  <a href="/" class="back">HerbBlueMap</a>
+  <div class="topbar-rule"></div>
+  <span class="topbar-brand">Shennong Bencao Jing</span>
+</div>
+
+<div class="hero">
+  <div class="hero-label">Biological Ethnobotany</div>
+  <div class="hero-title">Shennong Bencao Jing<br>Essentials</div>
+  <div class="hero-sub">32 core herbs of the classical canon · the original text, read through systems biology</div>
+</div>
+
+<div class="progress-section">
+  <div class="progress-header">
+    <span class="progress-label">Collection complete</span>
+    <span class="progress-count">32 / 32 herbs</span>
+  </div>
+  <div class="progress-track"><div class="progress-fill"></div></div>
+</div>
+
+<div class="search-wrap">
+  <svg class="search-icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="6.5" cy="6.5" r="5.5" stroke="#1a1612" stroke-width="1.5"/>
+    <path d="M10.5 10.5L14 14" stroke="#1a1612" stroke-width="1.5" stroke-linecap="round"/>
+  </svg>
+  <input type="text" id="searchInput" class="search-input" placeholder="Search by name, pinyin or action — e.g. Chaihu, clear heat, stop vomiting...">
+</div>
+
+<div class="cats">
+  <button class="cat active" data-cat="all">All</button>
+  <button class="cat" data-cat="exterior">Release the Exterior</button>
+  <button class="cat" data-cat="heat">Clear Heat</button>
+  <button class="cat" data-cat="vomit">Stop Vomiting & Transform Phlegm</button>
+  <button class="cat" data-cat="tonify">Tonify</button>
+  <button class="cat" data-cat="water">Drain Water</button>
+  <button class="cat" data-cat="purge">Purge</button>
+  <button class="cat" data-cat="qi">Move Qi</button>
+  <button class="cat" data-cat="blood">Move Blood</button>
+</div>
+
+<div class="herb-grid" id="herbGrid">
+  <a href="guizhi.html" class="herb-card" data-tags="guizhi 桂枝 guizhi cinnamon twig release exterior induce sweat 解表 发汗" data-cat="exterior">
+    <div class="herb-num">001</div><div class="herb-pinyin">Guizhi</div>
+    <div class="herb-cn">桂枝</div><div class="herb-en">Cinnamon Twig</div>
+    <div class="herb-tags"><span class="herb-tag">Release Exterior</span><span class="herb-tag">Induce Sweat</span></div>
+  </a>
+  <a href="mahuang.html" class="herb-card" data-tags="mahuang 麻黄 mahuang ephedra release exterior calm wheeze 解表 平喘" data-cat="exterior">
+    <div class="herb-num">002</div><div class="herb-pinyin">Mahuang</div>
+    <div class="herb-cn">麻黄</div><div class="herb-en">Ephedra</div>
+    <div class="herb-tags"><span class="herb-tag">Release Exterior</span><span class="herb-tag">Calm Wheeze</span></div>
+  </a>
+  <a href="fuzi.html" class="herb-card" data-tags="fuzi 附子 fuzi aconite root restore yang shaoyin 回阳 少阴" data-cat="tonify">
+    <div class="herb-num">003</div><div class="herb-pinyin">Fuzi</div>
+    <div class="herb-cn">附子</div><div class="herb-en">Aconite Root</div>
+    <div class="herb-tags"><span class="herb-tag">Restore Yang</span><span class="herb-tag">Shaoyin</span></div>
+  </a>
+  <a href="banxia.html" class="herb-card" data-tags="banxia 半夏 banxia pinellia stop vomiting transform phlegm 止呕 化痰" data-cat="vomit">
+    <div class="herb-num">004</div><div class="herb-pinyin">Banxia</div>
+    <div class="herb-cn">半夏</div><div class="herb-en">Pinellia</div>
+    <div class="herb-tags"><span class="herb-tag">Stop Vomiting</span><span class="herb-tag">Transform Phlegm</span></div>
+  </a>
+  <a href="gegen.html" class="herb-card" data-tags="gegen 葛根 gegen kudzu root release exterior generate fluids 解表 生津" data-cat="exterior">
+    <div class="herb-num">005</div><div class="herb-pinyin">Gegen</div>
+    <div class="herb-cn">葛根</div><div class="herb-en">Kudzu Root</div>
+    <div class="herb-tags"><span class="herb-tag">Release Exterior</span><span class="herb-tag">Generate Fluids</span></div>
+  </a>
+  <a href="shaoyao.html" class="herb-card" data-tags="shaoyao 芍药 shaoyao peony root nourish blood relieve spasm 养血 解痉" data-cat="tonify">
+    <div class="herb-num">006</div><div class="herb-pinyin">Shaoyao</div>
+    <div class="herb-cn">芍药</div><div class="herb-en">Peony Root</div>
+    <div class="herb-tags"><span class="herb-tag">Nourish Blood</span><span class="herb-tag">Relieve Spasm</span></div>
+  </a>
+  <a href="gancao.html" class="herb-card" data-tags="gancao 甘草 gancao licorice root harmonize resolve toxins 调和 解毒" data-cat="tonify">
+    <div class="herb-num">007</div><div class="herb-pinyin">Gancao</div>
+    <div class="herb-cn">甘草</div><div class="herb-en">Licorice Root</div>
+    <div class="herb-tags"><span class="herb-tag">Harmonize</span><span class="herb-tag">Resolve Toxins</span></div>
+  </a>
+  <a href="zhigancao.html" class="herb-card" data-tags="zhigancao 炙甘草 zhigancao honey-fried licorice boost qi restore pulse 补气 复脉" data-cat="tonify">
+    <div class="herb-num">008</div><div class="herb-pinyin">Zhigancao</div>
+    <div class="herb-cn">炙甘草</div><div class="herb-en">Honey-fried Licorice</div>
+    <div class="herb-tags"><span class="herb-tag">Boost Qi</span><span class="herb-tag">Restore Pulse</span></div>
+  </a>
+  <a href="dazao.html" class="herb-card" data-tags="dazao 大枣 dazao jujube tonify center nourish blood 补中 养血" data-cat="tonify">
+    <div class="herb-num">009</div><div class="herb-pinyin">Dazao</div>
+    <div class="herb-cn">大枣</div><div class="herb-en">Jujube</div>
+    <div class="herb-tags"><span class="herb-tag">Tonify Center</span><span class="herb-tag">Nourish Blood</span></div>
+  </a>
+  <a href="shengjiang.html" class="herb-card" data-tags="shengjiang 生姜 shengjiang fresh ginger stop vomiting disperse cold 止呕 散寒" data-cat="vomit">
+    <div class="herb-num">010</div><div class="herb-pinyin">Shengjiang</div>
+    <div class="herb-cn">生姜</div><div class="herb-en">Fresh Ginger</div>
+    <div class="herb-tags"><span class="herb-tag">Stop Vomiting</span><span class="herb-tag">Disperse Cold</span></div>
+  </a>
+  <a href="shigao.html" class="herb-card" data-tags="shigao 石膏 shigao gypsum clear heat yangming 清热 阳明" data-cat="heat">
+    <div class="herb-num">011</div><div class="herb-pinyin">Shigao</div>
+    <div class="herb-cn">石膏</div><div class="herb-en">Gypsum</div>
+    <div class="herb-tags"><span class="herb-tag">Clear Heat</span><span class="herb-tag">Yangming</span></div>
+  </a>
+  <a href="xingren.html" class="herb-card" data-tags="xingren 杏仁 xingren apricot kernel stop cough calm wheeze 止咳 平喘" data-cat="vomit">
+    <div class="herb-num">012</div><div class="herb-pinyin">Xingren</div>
+    <div class="herb-cn">杏仁</div><div class="herb-en">Apricot Kernel</div>
+    <div class="herb-tags"><span class="herb-tag">Stop Cough</span><span class="herb-tag">Calm Wheeze</span></div>
+  </a>
+  <a href="fuling.html" class="herb-card" data-tags="fuling 茯苓 fuling poria drain water fortify spleen 利水 健脾" data-cat="water">
+    <div class="herb-num">013</div><div class="herb-pinyin">Fuling</div>
+    <div class="herb-cn">茯苓</div><div class="herb-en">Poria</div>
+    <div class="herb-tags"><span class="herb-tag">Drain Water</span><span class="herb-tag">Fortify Spleen</span></div>
+  </a>
+  <a href="dahuang.html" class="herb-card" data-tags="dahuang 大黄 dahuang rhubarb root drain heat unblock bowels 泻热 通便" data-cat="purge">
+    <div class="herb-num">014</div><div class="herb-pinyin">Dahuang</div>
+    <div class="herb-cn">大黄</div><div class="herb-en">Rhubarb Root</div>
+    <div class="herb-tags"><span class="herb-tag">Drain Heat</span><span class="herb-tag">Unblock Bowels</span></div>
+  </a>
+  <a href="mangxiao.html" class="herb-card" data-tags="mangxiao 芒硝 mangxiao mirabilite soften hardness moisten dryness 软坚 润燥" data-cat="purge">
+    <div class="herb-num">015</div><div class="herb-pinyin">Mangxiao</div>
+    <div class="herb-cn">芒硝</div><div class="herb-en">Mirabilite</div>
+    <div class="herb-tags"><span class="herb-tag">Soften Hardness</span><span class="herb-tag">Moisten Dryness</span></div>
+  </a>
+  <a href="xixin.html" class="herb-card" data-tags="xixin 细辛 xixin asarum warm channels open orifices 温经 通窍" data-cat="exterior">
+    <div class="herb-num">016</div><div class="herb-pinyin">Xixin</div>
+    <div class="herb-cn">细辛</div><div class="herb-en">Asarum</div>
+    <div class="herb-tags"><span class="herb-tag">Warm Channels</span><span class="herb-tag">Open Orifices</span></div>
+  </a>
+  <a href="huangqin.html" class="herb-card" data-tags="huangqin 黄芩 huangqin scutellaria root clear heat dry dampness 清热 燥湿" data-cat="heat">
+    <div class="herb-num">017</div><div class="herb-pinyin">Huangqin</div>
+    <div class="herb-cn">黄芩</div><div class="herb-en">Scutellaria Root</div>
+    <div class="herb-tags"><span class="herb-tag">Clear Heat</span><span class="herb-tag">Dry Dampness</span></div>
+  </a>
+  <a href="huanglian.html" class="herb-card" data-tags="huanglian 黄连 huanglian coptis root clear heat stop vomiting 清热 止呕" data-cat="heat">
+    <div class="herb-num">018</div><div class="herb-pinyin">Huanglian</div>
+    <div class="herb-cn">黄连</div><div class="herb-en">Coptis Root</div>
+    <div class="herb-tags"><span class="herb-tag">Clear Heat</span><span class="herb-tag">Stop Vomiting</span></div>
+  </a>
+  <a href="zexie.html" class="herb-card" data-tags="zexie 泽泻 zexie water plantain drain water discharge heat 利水 泄热" data-cat="water">
+    <div class="herb-num">019</div><div class="herb-pinyin">Zexie</div>
+    <div class="herb-cn">泽泻</div><div class="herb-en">Water Plantain</div>
+    <div class="herb-tags"><span class="herb-tag">Drain Water</span><span class="herb-tag">Discharge Heat</span></div>
+  </a>
+  <a href="zhuling.html" class="herb-card" data-tags="zhuling 猪苓 zhuling polyporus drain water leach dampness 利水 渗湿" data-cat="water">
+    <div class="herb-num">020</div><div class="herb-pinyin">Zhuling</div>
+    <div class="herb-cn">猪苓</div><div class="herb-en">Polyporus</div>
+    <div class="herb-tags"><span class="herb-tag">Drain Water</span><span class="herb-tag">Leach Dampness</span></div>
+  </a>
+  <a href="zhizi.html" class="herb-card" data-tags="zhizi 栀子 zhizi gardenia fruit clear heat relieve vexation 清热 除烦" data-cat="heat">
+    <div class="herb-num">021</div><div class="herb-pinyin">Zhizi</div>
+    <div class="herb-cn">栀子</div><div class="herb-en">Gardenia Fruit</div>
+    <div class="herb-tags"><span class="herb-tag">Clear Heat</span><span class="herb-tag">Relieve Vexation</span></div>
+  </a>
+  <a href="zhimu.html" class="herb-card" data-tags="zhimu 知母 zhimu anemarrhena root clear heat enrich yin 清热 滋阴" data-cat="heat">
+    <div class="herb-num">022</div><div class="herb-pinyin">Zhimu</div>
+    <div class="herb-cn">知母</div><div class="herb-en">Anemarrhena Root</div>
+    <div class="herb-tags"><span class="herb-tag">Clear Heat</span><span class="herb-tag">Enrich Yin</span></div>
+  </a>
+  <a href="huangqi.html" class="herb-card" data-tags="huangqi 黄芪 huangqi astragalus root boost qi secure exterior 补气 固表" data-cat="tonify">
+    <div class="herb-num">023</div><div class="herb-pinyin">Huangqi</div>
+    <div class="herb-cn">黄芪</div><div class="herb-en">Astragalus Root</div>
+    <div class="herb-tags"><span class="herb-tag">Boost Qi</span><span class="herb-tag">Secure Exterior</span></div>
+  </a>
+  <a href="baizhu.html" class="herb-card" data-tags="baizhu 白术 baizhu atractylodes root fortify spleen dry dampness 健脾 燥湿" data-cat="tonify">
+    <div class="herb-num">024</div><div class="herb-pinyin">Baizhu</div>
+    <div class="herb-cn">白术</div><div class="herb-en">Atractylodes Root</div>
+    <div class="herb-tags"><span class="herb-tag">Fortify Spleen</span><span class="herb-tag">Dry Dampness</span></div>
+  </a>
+  <a href="renshen.html" class="herb-card" data-tags="renshen 人参 renshen ginseng root boost qi generate fluids 补气 生津" data-cat="tonify">
+    <div class="herb-num">025</div><div class="herb-pinyin">Renshen</div>
+    <div class="herb-cn">人参</div><div class="herb-en">Ginseng Root</div>
+    <div class="herb-tags"><span class="herb-tag">Boost Qi</span><span class="herb-tag">Generate Fluids</span></div>
+  </a>
+  <a href="zhishi.html" class="herb-card" data-tags="zhishi 枳实 zhishi immature bitter orange break qi disperse accumulation 破气 消积" data-cat="qi">
+    <div class="herb-num">026</div><div class="herb-pinyin">Zhishi</div>
+    <div class="herb-cn">枳实</div><div class="herb-en">Immature Bitter Orange</div>
+    <div class="herb-tags"><span class="herb-tag">Break Qi</span><span class="herb-tag">Disperse Accumulation</span></div>
+  </a>
+  <a href="houpo.html" class="herb-card" data-tags="houpo 厚朴 houpo magnolia bark move qi remove fullness 行气 除满" data-cat="qi">
+    <div class="herb-num">027</div><div class="herb-pinyin">Houpo</div>
+    <div class="herb-cn">厚朴</div><div class="herb-en">Magnolia Bark</div>
+    <div class="herb-tags"><span class="herb-tag">Move Qi</span><span class="herb-tag">Remove Fullness</span></div>
+  </a>
+  <a href="wuweizi.html" class="herb-card" data-tags="wuweizi 五味子 wuweizi schisandra berry astringe lung nourish kidney 敛肺 滋肾" data-cat="tonify">
+    <div class="herb-num">028</div><div class="herb-pinyin">Wuweizi</div>
+    <div class="herb-cn">五味子</div><div class="herb-en">Schisandra Berry</div>
+    <div class="herb-tags"><span class="herb-tag">Astringe Lung</span><span class="herb-tag">Nourish Kidney</span></div>
+  </a>
+  <a href="chaihu.html" class="herb-card" data-tags="chaihu 柴胡 chaihu bupleurum root harmonize shaoyang 和解 少阳" data-cat="heat">
+    <div class="herb-num">029</div><div class="herb-pinyin">Chaihu</div>
+    <div class="herb-cn">柴胡</div><div class="herb-en">Bupleurum Root</div>
+    <div class="herb-tags"><span class="herb-tag">Harmonize</span><span class="herb-tag">Shaoyang</span></div>
+  </a>
+  <a href="danggui.html" class="herb-card" data-tags="danggui 当归 danggui angelica root nourish blood move blood 养血 活血" data-cat="blood">
+    <div class="herb-num">030</div><div class="herb-pinyin">Danggui</div>
+    <div class="herb-cn">当归</div><div class="herb-en">Angelica Root</div>
+    <div class="herb-tags"><span class="herb-tag">Nourish Blood</span><span class="herb-tag">Move Blood</span></div>
+  </a>
+  <a href="ejiao.html" class="herb-card" data-tags="ejiao 阿胶 ejiao donkey-hide gelatin enrich yin stop bleeding 滋阴 止血" data-cat="tonify">
+    <div class="herb-num">031</div><div class="herb-pinyin">Ejiao</div>
+    <div class="herb-cn">阿胶</div><div class="herb-en">Donkey-hide Gelatin</div>
+    <div class="herb-tags"><span class="herb-tag">Enrich Yin</span><span class="herb-tag">Stop Bleeding</span></div>
+  </a>
+  <a href="chuanxiong.html" class="herb-card" data-tags="chuanxiong 川芎 chuanxiong sichuan lovage rhizome move blood move qi 活血 行气" data-cat="blood">
+    <div class="herb-num">032</div><div class="herb-pinyin">Chuanxiong</div>
+    <div class="herb-cn">川芎</div><div class="herb-en">Sichuan Lovage Rhizome</div>
+    <div class="herb-tags"><span class="herb-tag">Move Blood</span><span class="herb-tag">Move Qi</span></div>
+  </a>
+    <div class="no-results" id="noResults">No matching herbs found</div>
+
+</div>
+
+<p style="margin:32px auto 0;max-width:900px;padding:18px 20px;border:1px solid var(--border-warm);background:var(--brush-light);font-size:13px;line-height:1.8;color:var(--ink-soft)">⚠️ <strong>Safety note:</strong> This page is study material on the Chinese medical classics, offered for cultural and educational understanding only. It is not a diagnosis, a prescription, or a promise of treatment. Herbs are medicine — use them only under the guidance of a licensed practitioner, and never compound or take them on your own.</p>
+<div class="tcmus-nav tcmus-nav-bottom"><a href="https://herbbluemap.com/">HerbBlueMap Home</a><a href="https://herbbluemap.com/body-relief/">Pain Point Finder</a><a href="https://herbbluemap.com/bencao/">Herb Library</a><a href="https://tcmus.net/tcm/bencao/">中文原版 · Chinese Edition (tcmus.net)</a></div>
+<footer>
+  <span class="footer-text">HERBBLUEMAP.COM · SHENNONG BENCAO JING ESSENTIALS · THE CLASSICAL HERB LIBRARY</span>
+  <span class="footer-glyph">草</span>
+</footer>
+</div>
+
+<script>
+const searchInput = document.getElementById('searchInput');
+const cards = document.querySelectorAll('.herb-card');
+const noResults = document.getElementById('noResults');
+const catBtns = document.querySelectorAll('.cat');
+let activeCat = 'all', searchVal = '';
+
+function filterCards() {
+  let visible = 0;
+  cards.forEach(card => {
+    const tags = card.getAttribute('data-tags').toLowerCase();
+    const cat  = card.getAttribute('data-cat') || '';
+    const matchSearch = !searchVal || tags.includes(searchVal);
+    const matchCat = activeCat === 'all' || cat === activeCat;
+    if (matchSearch && matchCat) { card.classList.remove('hidden'); visible++; }
+    else card.classList.add('hidden');
+  });
+  noResults.className = visible === 0 ? 'no-results show' : 'no-results';
+}
+
+searchInput.addEventListener('input', () => {
+  searchVal = searchInput.value.trim().toLowerCase();
+  filterCards();
+});
+
+catBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    catBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    activeCat = btn.dataset.cat;
+    filterCards();
+  });
+});
+</script>
+</body>
+</html>
