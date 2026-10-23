@@ -1,0 +1,41 @@
+:root{
+  --blue:#1e50a2; --blue-deep:#133a7c; --ink:#1c2430; --paper:#fbfcfe;
+  --line:#dbe4f0; --soft:#eef3fa;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Georgia,'Times New Roman',serif;color:var(--ink);background:var(--paper);line-height:1.65}
+a{color:var(--blue)}
+.site-hdr{position:sticky;top:0;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:.6rem 1.1rem;z-index:10}
+.brand{display:flex;align-items:center;gap:.5rem;text-decoration:none;color:var(--ink)}
+.brand-name{font-size:1.25rem;font-weight:700;letter-spacing:.01em}
+.brand-name em{font-style:normal;color:var(--blue)}
+.site-nav a{margin-left:1.1rem;text-decoration:none;color:var(--ink);font-size:.98rem}
+.site-nav a:hover{color:var(--blue)}
+main{max-width:880px;margin:0 auto;padding:0 1.1rem 3rem}
+.hero{padding:3.2rem 0 2.2rem;text-align:left}
+.hero h1{font-size:2.35rem;line-height:1.2;margin:0 0 1rem}
+.lede{font-size:1.13rem;max-width:40rem}
+.hero-cta{margin:1.6rem 0 .4rem}
+.hero-note{color:#5a6a80;font-size:.92rem}
+.btn{display:inline-block;background:var(--blue);color:#fff;text-decoration:none;padding:.72rem 1.35rem;border-radius:8px;font-size:1.02rem}
+.btn:hover{background:var(--blue-deep)}
+.btn-dark{background:var(--ink)}
+.btn-dark:hover{background:#000}
+.tool-card{background:var(--soft);border:1px solid var(--line);border-radius:14px;padding:1.8rem;margin:1.5rem 0 2.5rem}
+.tool-card h2{margin-top:0;font-size:1.6rem}
+.tool-slogan{font-style:italic;font-size:1.12rem;color:var(--blue-deep)}
+.tool-list{padding-left:1.2rem}
+.library h2,.about h2{font-size:1.55rem;margin-bottom:.6rem}
+.lib-grid{list-style:none;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.lib-grid li{background:#fff;border:1px solid var(--line);border-radius:10px;padding:1rem 1.1rem}
+.lib-grid strong{display:block;margin-bottom:.3rem}
+.lib-grid span{color:#44536a;font-size:.96rem}
+.about{margin-top:2.5rem}
+.disclaimer{font-size:.9rem;color:#5a6a80;border-left:3px solid var(--line);padding-left:.9rem}
+.site-ftr{border-top:1px solid var(--line);text-align:center;color:#5a6a80;font-size:.92rem;padding:1.6rem 1rem 2.2rem}
+.site-ftr a{color:#5a6a80}
+@media (max-width:640px){
+  .hero h1{font-size:1.8rem}
+  .lib-grid{grid-template-columns:1fr}
+  .site-nav a{margin-left:.7rem;font-size:.9rem}
+}

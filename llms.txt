@@ -1,0 +1,15 @@
+# HerbBlueMap
+
+> HerbBlueMap (herbbluemap.com) is the blueprint of Chinese herbal wisdom in plain English, written for people who use natural remedies and adaptogens but know little about Chinese medicine. It explains the system behind the herbs — which herb, for whom, and when — and offers free interactive tools. Educational content only: no diagnosis, no prescriptions, no cure claims.
+
+## Tools
+
+- [Body Relief — Tung Point Finder](https://herbbluemap.com/body-relief/): A symptom-first interactive atlas of Master Tung acupuncture points for pain. Pick where it hurts (head pain, neck pain, low back pain, sciatica); the map shows the points practitioners use, drawn on body templates, with the classical reasoning for each. Its premise: "Pain doesn't always start where it hurts."
+
+## Coming library (in preparation)
+
+- Adaptogens, the Chinese originals: ginseng, astragalus, reishi, schisandra and other adaptogens are classical Chinese herbs; how the Chinese system classifies and combines them.
+- Single-herb maps: one page per herb — traditional uses, pattern fit, cautions.
+- Dampness in Chinese medicine: the heavy, foggy, sluggish pattern and its signs.
+- The Chinese medicine body clock: the two-hour organ rhythm and waking at 3 a.m.
+- Tongue reading basics and a beginners' roadmap to Chinese herbal medicine.
