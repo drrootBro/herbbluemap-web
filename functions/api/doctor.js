@@ -9,7 +9,7 @@ export async function onRequestGet({ request, env }) {
   if (!r) return json({ error: "not_found" }, 404);
   return json({
     lic: r.license_no, name: r.name, state: r.state, area: r.area, addr: r.address || "", zip: r.zip || "",
-    phone: r.phone || "", since: r.licensed_date || "", exp: r.reg_expiry || "", rating: r.rating || "",
+    phone: r.phone || "", since: r.licensed_date || "", exp: r.reg_expiry || "", rating: ((r.rating || "").match(/Google\s*\d+(\.\d+)?/) || [""])[0],
     cats: r.categories ? r.categories.split(";") : null, claim: "", source: r.categories ? "Practitioner’s clinic website and public listings" : "",
     website: r.public ? (r.website || "") : "", bio: r.public ? (r.bio || "") : "", claimed: r.claimed ? 1 : 0,
   });

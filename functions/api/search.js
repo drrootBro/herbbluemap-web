@@ -19,7 +19,7 @@ function distMi(a, b) {
 const shape = r => ({
   lic: r.license_no, name: r.name, area: r.area, addr: r.address || "", zip: r.zip || "",
   phone: r.phone || "", since: r.licensed_date || "", exp: r.reg_expiry || "",
-  rating: r.rating || "", cats: r.categories ? r.categories.split(";") : null,
+  rating: ((r.rating || "").match(/Google\s*\d+(\.\d+)?/) || [""])[0], cats: r.categories ? r.categories.split(";") : null,
   website: r.public ? (r.website || "") : "", claimed: r.claimed ? 1 : 0,
 });
 const json = (obj, status = 200) => new Response(JSON.stringify(obj), { status, headers: { "content-type": "application/json; charset=utf-8" } });
