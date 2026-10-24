@@ -1,6 +1,6 @@
 :root{
-  --blue:#1e50a2; --blue-deep:#133a7c; --ink:#1c2430; --paper:#fbfcfe;
-  --line:#dbe4f0; --soft:#eef3fa;
+  --blue:#1e50a2; --blue-deep:#133a7c; --ink:#1c2430; --paper:#f6f0e0;
+  --line:#e2d9c3; --soft:#efe7d2;
 }
 *{box-sizing:border-box}
 body{margin:0;font-family:Georgia,'Times New Roman',serif;color:var(--ink);background:var(--paper);line-height:1.65}
