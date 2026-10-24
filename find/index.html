@@ -97,7 +97,7 @@ button.ghost{background:#fff;color:var(--blue);border:1px solid var(--blue)}
 <div id="claim" class="note-f">
 <h2 style="color:#2a6b5e;margin-top:0">Are you an acupuncturist? Claim your listing</h2>
 <p>Every qualified, license-verified practitioner in our coverage area already has a profile here. Claiming is free — we never sell rankings or certifications. Claimed profiles can add self-described specialties (which is what concern search matches), a short introduction, and a clinic website link. Listings are maintained by us against official records; specialties are practitioner-reported and labeled as such.</p>
-<a href="mailto:rootbrodapp@gmail.com?subject=Claim%20my%20HerbBlueMap%20listing&body=Name%3A%0ALicense%20number%3A%0AClinic%20name%3A%0APhone%3A%0AWhat%20to%20add%20or%20correct%3A"><button>Claim by email</button></a>
+<button onclick="openClaimForm('')">Claim your listing</button> <span class="self-f">Opens our claim form — two minutes, no sign-in. Prefer email? rootbrodapp@gmail.com</span>
 </div>
 </section>
 <section id="v-results" class="hidden">
@@ -121,6 +121,9 @@ function catEn(c){if(CAT_EN[c])return CAT_EN[c];for(const k in CAT_EN){if(c.incl
 const $=id=>document.getElementById(id);
 function go(v){["home","results","profile"].forEach(x=>$("v-"+x).classList.toggle("hidden",x!==v));window.scrollTo(0,0)}
 function years(s){if(!s)return"—";return Math.max(0,Math.floor((Date.now()-new Date(s))/3.156e10))}
+const FORM_BASE="https://docs.google.com/forms/d/e/1FAIpQLSfnPYHz3ALXQUbGuAe1EjXLLoB_1TuTIWdxHGIr9R6tifR-dg/viewform";
+window._claimName="";
+function openClaimForm(lic){let u=FORM_BASE+"?usp=pp_url";if(lic){u+="&entry.1853746464="+encodeURIComponent(lic);if(window._claimName)u+="&entry.1574536615="+encodeURIComponent(window._claimName)}window.open(u,"_blank","width=720,height=840,noopener")}
 async function api(path){const r=await fetch(path);if(!r.ok)throw new Error(r.status);return r.json()}
 function card(p){let t=(p.cats||[]).map(c=>`<span class="tag">${catEn(c)}</span>`).join("");
 return `<div class="card-f" onclick="profile('${p.lic}')"><h3>${p.name}<span class="badge">License verified</span>${p.claimed?'<span class="badge gold">Claimed</span>':""}</h3>
@@ -148,10 +151,10 @@ runQuery(`By name: ${q.toUpperCase()}`,{mode:"name",q},page)}
 function doBrowse(page){const city=$("q-city").value,st=$("q-state").value;
 if(!city&&!st){alert("Pick a state or area first");return}
 runQuery(`${city?(AREA[city]||city):(STATES[st]||st)} acupuncturists (featured first)`,{mode:"area",state:st,city},page)}
-async function profile(lic){let p;try{p=await api("/api/doctor?lic="+lic)}catch(e){alert("Profile unavailable right now");return}if(p.error){alert("Profile not found");return}
+async function profile(lic){window._claimName="";let p;try{p=await api("/api/doctor?lic="+lic)}catch(e){alert("Profile unavailable right now");return}if(p.error){alert("Profile not found");return}window._claimName=p.name||"";
 let cats=p.cats?`<h3 style="color:var(--blue-deep)">Self-described specialties</h3><div>${p.cats.map(c=>`<span class="tag">${catEn(c)}</span>`).join("")}</div><p class="meta-f">${p.claim||""}</p><p class="self-f">Source: ${p.source||"practitioner-reported"} · reported by the practitioner, not verified by HerbBlueMap; we do not endorse treatment outcomes.</p>`:`<h3 style="color:var(--blue-deep)">Self-described specialties</h3><p class="meta-f">This practitioner has not added self-described specialties yet. Once claimed and completed, this profile can be found by concern searches.</p>`;
 let bio=p.bio?`<h3 style="color:var(--blue-deep)">Introduction</h3><p class="meta-f">${p.bio}</p><p class="self-f">Provided by the practitioner, reviewed by HerbBlueMap before publishing.</p>`:"";
-let claimBox=p.claimed?"":`<div class="note-f" style="margin-top:14px">Is this your profile? <a href="mailto:rootbrodapp@gmail.com?subject=Claim%20my%20listing%20(license%20${p.lic})&body=Name%3A%0ALicense%20number%3A%20${p.lic}%0AClinic%20name%3A%0APhone%3A%0AWhat%20to%20add%20or%20correct%3A">Claim it by email</a> — add your specialties, a short introduction and your clinic website, and become findable by concern.</div>`;
+let claimBox=p.claimed?"":`<div class="note-f" style="margin-top:14px">Is this your profile? <a href="#" onclick="openClaimForm('${p.lic}');return false">Claim it with the form</a> (your name and license number are filled in for you) — add your specialties, a short introduction and your clinic website, and become findable by concern.</div>`;
 $("p-body").innerHTML=`<div class="card-f" style="cursor:default"><h3 style="font-size:24px">${p.name}<span class="badge">License verified</span>${p.claimed?'<span class="badge gold">Claimed</span>':""}</h3>
 <div class="meta-f">${AREA[p.area]||p.area} · ${p.addr||"Address pending claim confirmation"} ${p.zip||""}<br>Phone ${p.phone||"—"}${p.rating?"<br>"+p.rating+" (reference)":""}${p.website?`<br>Clinic website: <a href="${p.website}" target="_blank" rel="noopener">${p.website}</a>`:""}</div>
 <h3 style="color:var(--blue-deep)">Our verification checklist — hard facts only</h3>
