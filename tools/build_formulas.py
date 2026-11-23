@@ -144,9 +144,9 @@ def page(it, items):
         {"@type":"ListItem","position":1,"name":"Home","item":SITE+"/"},
         {"@type":"ListItem","position":2,"name":"Formulas","item":SITE+"/formulas/"},
         {"@type":"ListItem","position":3,"name":py,"item":url}]}]}
-    tool_cta = ('<p><a class="btn" href="/shang-han-lun/tool/">Try it in the free formula finder →</a></p>'
+    tool_cta = ('<p><a class="btn" href="/shang-han-lun/tool/">Try it in the Shang Han Lun formula finder →</a></p>'
                 '<p class="hero-note">Walk the signs step by step and see where this formula sits among its neighbors.</p>') if it["in_tool"] else \
-               '<p><a class="btn" href="/shang-han-lun/tool/">Open the free Shang Han Lun formula finder →</a></p>'
+               '<p><a class="btn" href="/shang-han-lun/tool/">Open the Shang Han Lun formula finder →</a></p>'
     rel_html = "".join(f'<li><a href="/formulas/{o["slug"]}/"><strong>{esc(o["py"])} · {o["zh"]} →</strong><span>{esc(o["en"])}</span></a></li>' for o in rel)
     note = f'<p>{esc(it["note"])}</p>' if it.get("note") else ""
     return f"""<!doctype html>
@@ -280,7 +280,7 @@ def index_page(items):
     <p class="crumbs"><a href="/">Home</a> · Formulas</p>
     <h1>Chinese Herbal Formulas A–Z</h1>
     <p class="lede">Chinese medicine rarely prescribes a single herb. It prescribes a <em>formula</em>: a small team of herbs aimed at one pattern. These are the classical formulas of the <a href="/shang-han-lun/">Shang Han Lun</a> and its companion texts — each with its pinyin and Chinese name, ingredients, typical uses, the original line, and cautions. Every herb links to its page in the <a href="/bencao/">herb library</a>.</p>
-    <p><a class="btn" href="/shang-han-lun/tool/">Find a formula by symptoms (free) →</a></p>
+    <p><a class="btn" href="/shang-han-lun/tool/">Find a formula by symptoms →</a></p>
     <ul class="lib-grid">
       {rows}
     </ul>
