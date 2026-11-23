@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://herbbluemap.com/</loc><lastmod>2026-11-23</lastmod><priority>1.0</priority></url>
+  <url><loc>https://herbbluemap.com/acupuncture/</loc><lastmod>2026-11-23</lastmod><priority>0.8</priority></url>
+  <url><loc>https://herbbluemap.com/acupuncture/buffalo/</loc><lastmod>2026-11-23</lastmod><priority>0.7</priority></url>
+  <url><loc>https://herbbluemap.com/acupuncture/flushing/</loc><lastmod>2026-11-23</lastmod><priority>0.7</priority></url>
+  <url><loc>https://herbbluemap.com/acupuncture/insurance/</loc><lastmod>2026-11-23</lastmod><priority>0.7</priority></url>
+  <url><loc>https://herbbluemap.com/acupuncture/manhattan/</loc><lastmod>2026-11-23</lastmod><priority>0.7</priority></url>
+  <url><loc>https://herbbluemap.com/acupuncture/new-york/</loc><lastmod>2026-11-23</lastmod><priority>0.7</priority></url>
+  <url><loc>https://herbbluemap.com/acupuncture/rochester/</loc><lastmod>2026-11-23</lastmod><priority>0.7</priority></url>
+  <url><loc>https://herbbluemap.com/acupuncture/syracuse/</loc><lastmod>2026-11-23</lastmod><priority>0.7</priority></url>
   <url><loc>https://herbbluemap.com/bencao/</loc><lastmod>2026-11-23</lastmod><priority>0.8</priority></url>
   <url><loc>https://herbbluemap.com/bencao/baizhu.html</loc><lastmod>2026-11-23</lastmod><priority>0.7</priority></url>
   <url><loc>https://herbbluemap.com/bencao/banxia.html</loc><lastmod>2026-11-23</lastmod><priority>0.7</priority></url>
@@ -79,4 +87,5 @@
   <url><loc>https://herbbluemap.com/shang-han-lun/tool/</loc><lastmod>2026-11-23</lastmod><priority>0.7</priority></url>
   <url><loc>https://herbbluemap.com/shang-han-lun/tool/zh/</loc><lastmod>2026-11-23</lastmod><priority>0.7</priority></url>
   <url><loc>https://herbbluemap.com/tongue-diagnosis/</loc><lastmod>2026-11-23</lastmod><priority>0.8</priority></url>
+  <url><loc>https://herbbluemap.com/traditional-chinese-medicine/</loc><lastmod>2026-11-23</lastmod><priority>0.8</priority></url>
 </urlset>
