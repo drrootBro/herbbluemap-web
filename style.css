@@ -73,3 +73,5 @@ main{max-width:880px;margin:0 auto;padding:0 1.1rem 3rem}
 .tool-embed iframe{width:100%;height:760px;border:1px solid var(--line);border-radius:12px;background:#fff}
 .tool-embed-note{color:#5a6a80;font-size:.92rem}
 @media (max-width:640px){.article h1{font-size:1.65rem}.tool-embed iframe{height:640px}}
+.formula-herbs{max-width:44rem;padding-left:1.2rem}
+.formula-herbs li{margin:.2rem 0}

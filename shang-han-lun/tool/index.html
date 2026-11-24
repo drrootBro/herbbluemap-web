@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shang Han Lun Formula Finder (Free Edition) · HerbBlueMap</title>
-<meta name="description" content="Free Shang Han Lun formula finder in English: pick the signs and walk Zhang Zhongjing's Taiyang and Yangming patterns to the classical formula, with herbs, preparation, cautions and the original line.">
+<title>Shang Han Lun Formula Finder in English · HerbBlueMap</title>
+<meta name="description" content="Shang Han Lun formula finder in English: pick the signs and walk Zhang Zhongjing's Taiyang and Yangming patterns to the classical formula, with herbs, preparation, cautions and the original line.">
 <link rel="canonical" href="https://herbbluemap.com/shang-han-lun/tool/">
 <link rel="alternate" hreflang="en" href="https://herbbluemap.com/shang-han-lun/tool/">
 <link rel="alternate" hreflang="zh" href="https://herbbluemap.com/shang-han-lun/tool/zh/">
@@ -482,6 +482,7 @@ function showResult(name) {
       <div class="sec"><div class="sec-lbl">Preparation & Administration</div><div class="prep-box">${f.prep}</div></div>
       <div class="sec"><div class="sec-lbl">Classical Source</div><div class="classic-box">${f.original}<div class="classic-src">— ${f.source} · Pattern: ${f.pattern}</div></div></div>
       <div class="sec"><div class="sec-lbl">Cautions & Contraindications</div><div class="warn-box">${f.contra}</div></div>
+      ${/Jia Xin Yi/.test(name)?'':`<div class="sec"><a href="/formulas/${name.split(' (')[0].toLowerCase().replace(/[^a-z0-9]+/g,'-')}/" target="_top">Read the full ${name.split(' (')[0]} page →</a></div>`}
     </div>`;
 }
 
