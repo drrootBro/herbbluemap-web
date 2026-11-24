@@ -106,7 +106,7 @@ def split_original(o):
 def herb_li(h):
     k = herb_key(h["n"]); page = HERB_PAGE.get(k)
     label = esc(h["n"])
-    if page: label = f'<a href="/bencao/{page}.html">{label}</a>'
+    if page: label = f'<a href="/bencao/{page}">{label}</a>'
     extra = esc(h["a"]) + (f' · {esc(h["p"])}' if h.get("p") else "")
     return f"<li>{label} — {extra}</li>"
 
@@ -319,7 +319,7 @@ def sitemap():
         for f in files:
             if not f.endswith(".html"): continue
             rel = os.path.relpath(os.path.join(d, f), ROOT).replace(os.sep, "/")
-            path = "/" + (rel[:-10] if rel.endswith("index.html") else rel)
+            path = "/" + (rel[:-10] if rel.endswith("index.html") else rel[:-5] if rel.endswith(".html") else rel)
             pr = "1.0" if path == "/" else "0.8" if path.count("/") <= 2 and path.endswith("/") else "0.7"
             urls.append((path, pr))
     out = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
