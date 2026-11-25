@@ -259,11 +259,12 @@ def build():
       <li><a href="/body-relief/"><strong>Acupressure and tui na →</strong><span>Points you can press yourself, by symptom.</span></a></li>
       <li><a href="/chinese-herbal-medicine/"><strong>Adaptogens and tonics →</strong><span>Ginseng, astragalus, reishi in their classical context.</span></a></li>
     </ul>
-    <p>Cupping and gua sha (scraping) loosen tight tissue and are often added to an acupuncture visit. Tai chi and qigong are gentle movement practices with good research support for balance, fall prevention and stress.</p>
+    <p><a href="/cupping/">Cupping</a>, <a href="/gua-sha/">gua sha</a> (scraping) and <a href="/moxibustion/">moxibustion</a> (warming points with mugwort) are often added to an acupuncture visit. Tai chi and qigong are gentle movement practices with good research support for balance, fall prevention and stress.</p>
     <h2>What the research supports</h2>
     <p>The best evidence is for acupuncture in chronic pain, and for tai chi in balance and fall prevention in older adults. Some individual herbs and formulas have promising trials, but quality varies and many have not been studied well. Treat TCM as a complement to medical care, not a replacement for it.</p>
     <h2>Using Chinese herbs safely</h2>
     <p>Herbs are medicine. Some interact with prescription drugs, especially blood thinners, diabetes and blood-pressure medications. Buy from suppliers that test for heavy metals and contamination, avoid herbs in pregnancy unless a qualified practitioner prescribes them, and always tell your doctor what you take.</p>
+    <p>Chinese herbs by problem: <a href="/chinese-herbs-for/cold-and-flu/">colds and flu</a> · <a href="/chinese-herbs-for/cough/">cough</a> · <a href="/chinese-herbs-for/constipation/">constipation</a> · <a href="/chinese-herbs-for/anxiety-and-insomnia/">anxiety and insomnia</a>.</p>
     <h2>Finding a qualified TCM practitioner in the US</h2>
     <p>Acupuncture is licensed state by state, and most states require the national NCCAOM board exams. For herbs, look for training or certification in Chinese herbology as well. In New York, start with our <a href="/acupuncture/new-york/">verified acupuncturists</a>.</p>""",
         [("What is traditional Chinese medicine?", "A system of health care developed in China over two thousand years. It diagnoses patterns of imbalance and treats them with acupuncture, herbal formulas, massage, movement and diet."),
