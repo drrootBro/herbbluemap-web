@@ -3,16 +3,55 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>HerbBlueMap — Chinese Herbs & Acupoints, Mapped in Plain English</title>
+<title>HerbBlueMap — Chinese Herbs &amp; Acupoints, Mapped in Plain English</title>
 <meta name="description" content="HerbBlueMap is the blueprint of Chinese herbal wisdom for the naturally curious: adaptogens and single herbs explained, acupoints you can find, and a free pain-relief point finder. No jargon, no hype." />
 <link rel="canonical" href="https://herbbluemap.com/" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="HerbBlueMap" />
-<meta property="og:title" content="HerbBlueMap — Chinese Herbs & Acupoints, Mapped in Plain English" />
+<meta property="og:title" content="HerbBlueMap — Chinese Herbs &amp; Acupoints, Mapped in Plain English" />
 <meta property="og:description" content="The blueprint of Chinese herbal wisdom: herbs explained, acupoints you can find, and a free pain-relief point finder." />
 <meta property="og:url" content="https://herbbluemap.com/" />
 <link rel="stylesheet" href="/style.css" />
+<style>
+  /* Homepage-only styles (2026-11-26 redesign): float-wrapped photos, justified body copy, hero headline / intro / Shennong figure sharing one container width. style.css is untouched. */
+  body{font-size:17.5px;line-height:1.68}
+  .hero{padding:2.6rem 0 0}
+  .hero h1{font-size:2.5rem;line-height:1.2;margin:0 0 1.1rem}
+  .lede{font-size:1.14rem;max-width:none;margin:0 0 1.1rem;text-align:justify}
+  .system-fig{margin:2rem 0 0;padding:1.1rem 1.1rem .8rem}
+  .system-fig svg{width:100%;height:auto;display:block}
+  .banner{margin-top:2rem;margin-left:calc(50% - 50vw);width:100vw;height:300px;overflow:hidden}
+  .banner img{width:100%;height:100%;object-fit:cover;display:block}
+  .tool{padding:2.3rem 0 1.9rem;text-align:center}
+  .btn{padding:.85rem 1.7rem;font-size:1.1rem}
+  .hero-note{color:#5a6a80;font-size:.93rem;margin-top:.7rem}
+  section.block{padding:1.1rem 0 1.5rem}
+  section.block h2{font-size:1.65rem;margin:0 0 .8rem;line-height:1.3}
+  section.block p{margin:0 0 1.05rem;text-align:justify}
+  img.ph{display:block;border-radius:10px}
+  .fig-r{float:right;width:44%;height:auto;margin:.35rem 0 .8rem 1.6rem}
+  .fig-l{float:left;width:38%;height:auto;margin:.35rem 1.6rem .8rem 0}
+  .fig-about{width:29%}
+  section.block::after{content:"";display:block;clear:both}
+  .cta-link{display:inline-block;margin-top:.4rem;font-size:1.05rem}
+  .lib-intro{max-width:none}
+  .lib-list{margin-top:1.1rem}
+  .lib-item{margin-bottom:.9rem}
+  .lib-item a{font-weight:700;text-decoration:none;font-size:1.06rem}
+  .lib-item a:hover{text-decoration:underline}
+  .lib-item span{display:block;color:#44536a;font-size:.99rem;margin-top:.15rem;text-align:justify}
+  .lib-item.big-gap{margin-top:1.4rem;margin-bottom:1.05rem}
+  .band{margin:1.4rem 0 0;margin-left:calc(50% - 50vw);width:100vw;height:470px;overflow:hidden}
+  .band img{width:100%;height:100%;object-fit:cover;display:block}
+  .disclaimer{clear:both;font-size:.92rem;color:#5a6a80;border-left:3px solid var(--line);padding-left:.95rem;margin-top:1.3rem}
+  @media (max-width:640px){
+    .hero h1{font-size:1.9rem}
+    .fig-r,.fig-l,.fig-about{float:none;width:100%;margin:0 0 1rem}
+    .banner{height:200px}
+    .band{height:260px}
+  }
+</style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -40,19 +79,11 @@
 </header>
 
 <main>
+  <!-- Block 1 · Hero -->
   <section class="hero">
     <h1>Chinese herbs, drawn as a map<br />you can actually read.</h1>
-    <p class="lede">You already buy the herbs — ginseng, astragalus, reishi. Behind them stands a 2,000-year-old system that decides <strong>which herb, for whom, and when</strong>. HerbBlueMap draws that system in plain English: no jargon, no hype, no miracle claims.</p>
-    <p class="lede">And when something hurts: pain doesn't always start where it hurts. In Master Tung's tradition, the point that helps is often somewhere else entirely — a headache answered from the foot, a stiff neck from the hand. Pick where it hurts, and the map shows you the points.</p>
-    <p class="hero-cta"><a class="btn" href="/body-relief/">Start with what hurts →</a></p>
-    <p class="hero-note">Free tool · No sign-up · Head, neck, low back, sciatica · Educational, not medical advice</p>
-  </section>
-
-  <section class="system" id="system">
-    <h2>One herb at a time — or a whole system?</h2>
-    <p>Western herbalism usually asks: <em>what does this herb do?</em> One plant, one active ingredient, one job — echinacea for immunity, valerian for sleep. A shelf of single tools.</p>
-    <p>Classical Chinese medicine asks a different question: <em>what state is this body in?</em> And the first thing it reads is temperature. Every pattern is hot or cold, and every herb is warming or cooling. The rule is to push against the pattern — cooling herbs for a heat pattern, warming herbs for a cold one. Get the direction wrong and at best nothing happens. At worst you have poured fuel on a fire, or frost on snow.</p>
-    <p>Within that logic, herbs are almost never used alone. A formula is a small team with named roles — the <strong>Emperor</strong> does the main work, the <strong>Minister</strong> backs it up, the <strong>Assistant</strong> handles side effects and secondary problems, the <strong>Envoy</strong> guides the team and keeps it coherent. <em>Jun chen zuo shi</em> — sovereign, minister, assistant, envoy.</p>
+    <p class="lede">You already know some of these plants. Ginseng in the tea aisle. Astragalus in a supplement capsule. Reishi printed on a bag of coffee. What the shelf never tells you is that behind them stands a system — assembled over some two thousand years — that decides which herb, for whom, and at what moment. HerbBlueMap draws that system in plain English.</p>
+    <p class="lede">And when something hurts, the map runs the other way. In Master Tung's acupuncture tradition, pain doesn't always start where it hurts: a headache may be answered from a point on the foot, a stiff neck from a point on the hand. Tell the map where it hurts, and it shows you the points.</p>
     <figure class="system-fig">
       <svg viewBox="0 0 840 486" role="img" aria-label="Diagram: Western herbalism and Chinese medicine share the same shelf of herbs and classical descriptions. Western herbalism sends one herb to one job. The Chinese formula Guizhi Tang assigns four roles: Emperor cinnamon twig, Minister white peony, Assistant jujube and ginger, Envoy licorice — combined into one formula that rebalances the body's pattern.">
         <defs>
@@ -124,35 +155,58 @@
         <text x="636" y="450" text-anchor="middle" font-size="12" font-style="italic" fill="#5a6a80">No herb works alone.</text>
       </svg>
     </figure>
-    <p>The ginseng problem shows why the team matters. Ginseng is warming — take too much and you get the classic overheat signs: dry mouth, a parched tongue. But what if the body genuinely needs what ginseng does? The answer is not to abandon it. In the classical formula Sheng Mai San, ginseng works alongside maidong, a cool, moistening herb whose whole job is to cancel the dryness — the benefit stays, the side effect is chaperoned away. That chaperone is exactly what the Assistant role exists for.</p>
-    <p>The same thinking explains the classical approach to a viral cold. The old texts never ask which herb kills a virus. If the pattern is chills and no sweat — a body sealed shut — the strategy is to open the surface: warming herbs like fresh ginger and cinnamon twig bring on a sweat, and the illness is shown the door, pushed out through the skin. The target is never the germ. It is the body's own machinery, tuned until the body clears the problem itself.</p>
-    <p>Which is why the same disease name gets different formulas in different people. A cold in a strong body and a cold in a depleted one are two different patterns — and it is the pattern, not the disease label, that writes the formula.</p>
-    <p class="sys-link"><a href="/bencao/">Meet the 32 herbs these formulas are built from →</a></p>
+    <div class="banner"><img class="ph" src="/images/sunflower.jpg" alt="Sunflowers in a field" /></div>
   </section>
 
+  <!-- Block 2 · Pain point tool -->
+  <section class="tool">
+    <a class="btn" href="/body-relief/">Start with what hurts →</a>
+    <p class="hero-note">Free tool · No sign-up · Head, neck, low back, sciatica · Educational, not medical advice</p>
+  </section>
 
-  <section class="library" id="library">
+  <!-- Block 3 · Essay -->
+  <section class="block essay" id="system">
+    <h2>One herb at a time — or a whole system?</h2>
+    <img class="ph fig-r" src="/images/bridge.jpg" alt="A wooden bridge over a garden pond" />
+    <p>Western herbalism usually starts with one plant and one job: echinacea for immunity, valerian for sleep. A shelf of single tools, each with its own label.</p>
+    <p>Classical Chinese medicine starts somewhere else. It asks what state this body is in — and the first thing it reads is temperature. Patterns run hot or cold; herbs run warming or cooling. The work is to push against the pattern: cooling herbs for a heat pattern, warming herbs for a cold one. Get the direction wrong and at best nothing happens. At worst, you have poured fuel on a fire, or laid frost on snow.</p>
+    <p>That is why herbs here are almost never used alone. A classical formula is a small crew with named jobs. The <strong>Emperor</strong> does the main work. The <strong>Minister</strong> backs him up. The <strong>Assistant</strong> handles side effects and secondary problems. The <strong>Envoy</strong> guides the whole crew and keeps it pointed one way. <em>Jun chen zuo shi</em> — sovereign, minister, assistant, envoy.</p>
+    <p>The ginseng problem shows what the crew is for. Ginseng warms. Take too much of it and you get the classic overheating signs: a dry mouth, a parched tongue. But what if the body genuinely needs what ginseng does? The classical answer is not to abandon it. In Sheng Mai San — a formula written down centuries ago — ginseng works beside maidong (ophiopogon), a cool, moistening root whose entire assignment is to cancel the dryness, while schisandra holds the formula together. The benefit stays. The side effect gets a chaperone. That chaperone is exactly what the Assistant's job exists for.</p>
+    <p>The same thinking runs the classical approach to an ordinary cold. The old texts never ask which herb kills a virus. If the pattern is chills and no sweat — a body sealed shut — the strategy is to open the surface: fresh ginger and cinnamon twig coax out a sweat, and the illness is shown the door, out through the skin. The target was never the germ. It is the body's own machinery, adjusted until the body clears the problem itself.</p>
+    <p>Which is why one disease name earns different formulas in different people. A cold in a strong body and a cold in a depleted one are two different patterns — and it is the pattern, not the disease label, that writes the formula.</p>
+    <a class="cta-link" href="/bencao/">Meet the 32 herbs these formulas are built from →</a>
+  </section>
+
+  <!-- Block 4 · Herb Library -->
+  <section class="block library" id="library">
     <h2>The Herb Library</h2>
-    <p>The map has more than one territory. Start anywhere — every guide below is open:</p>
-    <ul class="lib-grid">
-      <li><a href="/chinese-herbal-medicine/" style="display:block;text-decoration:none;color:inherit"><strong>Adaptogens, the Chinese originals →</strong><span>Why half the adaptogen shelf is Chinese medicine in disguise — and how the system uses them differently.</span></a></li>
-      <li><a href="/bencao/" style="display:block;text-decoration:none;color:inherit"><strong>The Classical 32 — Shennong Bencao Jing Essentials →</strong><span>Now open: the 32 herbs Zhang Zhongjing's formulas actually run on — licorice, ginseng, cinnamon twig, aconite — each with the original 2,000-year-old text, an English translation, and what modern pharmacology found inside.</span></a></li>
-      <li><a href="/dampness/" style="display:block;text-decoration:none;color:inherit"><strong>Dampness →</strong><span>The heavy, foggy, sluggish pattern Chinese medicine named a thousand years ago.</span></a></li>
-      <li><a href="/body-clock/" style="display:block;text-decoration:none;color:inherit"><strong>The body clock →</strong><span>Why you wake at 3 a.m. — the two-hour rhythm your organs keep.</span></a></li>
-      <li><a href="/tongue-diagnosis/" style="display:block;text-decoration:none;color:inherit"><strong>Tongue reading →</strong><span>Your tongue is a dashboard. Learn to read yours.</span></a></li>
-      <li><a href="/chinese-herbs-for-beginners/" style="display:block;text-decoration:none;color:inherit"><strong>Chinese herbs for beginners →</strong><span>The order to learn things in, if you were starting from zero.</span></a></li>
-      <li><a href="/shang-han-lun/" style="display:block;text-decoration:none;color:inherit"><strong>Shang Han Lun for beginners →</strong><span>The 1,800-year-old handbook behind the classical formulas — the six stages in plain English, plus a free formula finder to try.</span></a></li>
-      <li><a href="/acupuncture/" style="display:block;text-decoration:none;color:inherit"><strong>Acupuncture, explained →</strong><span>What it helps, what a session costs, and whether insurance covers it.</span></a></li>
-      <li><a href="/traditional-chinese-medicine/" style="display:block;text-decoration:none;color:inherit"><strong>Traditional Chinese medicine →</strong><span>The core ideas and five branches, in plain English.</span></a></li>
-      <li><a href="/formulas/" style="display:block;text-decoration:none;color:inherit"><strong>Chinese herbal formulas A–Z →</strong><span>Gui Zhi Tang, Wu Ling San, Bai Hu Tang and 30 more classical formulas — ingredients, uses and the original lines.</span></a></li>
-      <li><a href="/find/" style="display:block;text-decoration:none;color:inherit"><strong>Find an acupuncturist →</strong><span>New York practitioners whose licenses were verified one by one against state records. Any disciplinary record — ever — means no listing.</span></a></li>
-    </ul>
+    <img class="ph fig-l" src="/images/moth.jpg" alt="A black-and-orange moth on goldenrod flowers" />
+    <p class="lib-intro">The map has more than one territory. Everything below is open — start wherever your question starts.</p>
+    <div class="lib-list">
+      <div class="lib-item"><a href="/chinese-herbal-medicine/">Adaptogens, the Chinese originals →</a><span>Half the adaptogen shelf is Chinese medicine in disguise. This is how the system itself uses those plants, and where the marketing version drifted away from it.</span></div>
+      <div class="lib-item big-gap"><a href="/bencao/">The Classical 32 — Shennong Bencao Jing Essentials →</a><span>The 32 herbs Zhang Zhongjing's formulas actually run on — licorice, ginseng, cinnamon twig, aconite. Each one with the original text from two thousand years ago, an English translation, and what modern pharmacology found inside it.</span></div>
+      <div class="lib-item"><a href="/dampness/">Dampness →</a><span>Heavy, foggy, sluggish — like walking around in a wet coat. Chinese medicine named this pattern a thousand years ago and built a whole toolkit around it.</span></div>
+      <div class="lib-item"><a href="/body-clock/">The body clock →</a><span>Why you wake at 3 a.m. The two-hour rhythm the organs keep, hour by hour, all through the night.</span></div>
+      <div class="lib-item"><a href="/tongue-diagnosis/">Tongue reading →</a><span>Your tongue is a dashboard you carry everywhere. Learn to read yours.</span></div>
+      <div class="lib-item"><a href="/chinese-herbs-for-beginners/">Chinese herbs for beginners →</a><span>The order to learn things in, if you were starting from zero: which ideas first, which plants after them.</span></div>
+      <div class="lib-item"><a href="/shang-han-lun/">Shang Han Lun for beginners →</a><span>The 1,800-year-old handbook behind the classical formulas — the six stages in plain English, plus a free formula finder to try.</span></div>
+      <div class="lib-item"><a href="/acupuncture/">Acupuncture, explained →</a><span>What it can help with, what a session costs, and whether insurance covers it. The practical questions, answered plainly.</span></div>
+      <div class="lib-item"><a href="/traditional-chinese-medicine/">Traditional Chinese medicine →</a><span>The core ideas and the five branches, in plain English.</span></div>
+      <div class="lib-item big-gap"><a href="/formulas/">Chinese herbal formulas A–Z →</a><span>Gui Zhi Tang, Wu Ling San, Bai Hu Tang and thirty more classical formulas — ingredients, uses, and the original lines they come from.</span></div>
+      <div class="lib-item big-gap"><a href="/find/">Find an acupuncturist →</a><span>New York practitioners whose licenses were checked one by one against state records. Any disciplinary record — ever — means no listing.</span></div>
+    </div>
   </section>
 
-  <section class="about" id="about">
+  <!-- Block 5 · Breathing band -->
+  <div class="band"><img class="ph" src="/images/canopy.jpg" alt="Maple canopy seen from below" /></div>
+
+  <!-- Block 6 · About + disclaimer -->
+  <section class="block about" id="about" style="padding-top:1.6rem">
     <h2>About this map</h2>
-    <p>HerbBlueMap is drawn by a practitioner-scholar of classical Chinese medicine (the <em>Shang Han Lun</em> lineage) who believes the system's real treasure is not any single herb — it is the map itself: how symptoms, herbs, and points connect. Western herb culture found the ingredients. This site supplies the blueprint.</p>
-    <p class="disclaimer">Educational content only. HerbBlueMap does not diagnose, prescribe, or promise cures. Herbs are medicine — talk to a qualified practitioner or your clinician before using them, especially alongside medication, in pregnancy, or for serious conditions.</p>
+    <img class="ph fig-r fig-about" src="/images/reflection.jpg" alt="A garden fence and autumn leaves reflected in still water" />
+    <p>HerbBlueMap is drawn by a practitioner-scholar of classical Chinese medicine, working in the <em>Shang Han Lun</em> lineage. His conviction, after years with these texts: the real treasure of this system is not any single herb. It is the map itself — how symptoms, herbs, and points connect to one another.</p>
+    <p>Western herb culture found the ingredients. This site supplies the blueprint.</p>
+    <p class="disclaimer"><strong>Disclaimer:</strong> Educational content only. HerbBlueMap does not diagnose, prescribe, or promise cures. Herbs are medicine — talk to a qualified practitioner or your clinician before using them, especially alongside medication, in pregnancy, or for serious conditions.</p>
   </section>
 </main>
 
